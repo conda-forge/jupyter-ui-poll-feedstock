@@ -1,18 +1,18 @@
 {% set name = "jupyter-ui-poll" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 2a273e566525b9d683fbb70050a77043aa4cd58b0c5f6d2c13b453db524bd66c
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 5b5bb4609bca862ffaebfe17d4a626e64769985b63d5fd176f985a9a0d159a5e
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -40,7 +40,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Block jupyter cell execution while interacting with widgets"
+  summary: Block jupyter cell execution while interacting with widgets
   description: |
     Block Jupyter cell execution while interacting with widgets.
 
