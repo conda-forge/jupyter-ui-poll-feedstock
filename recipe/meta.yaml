@@ -1,5 +1,5 @@
 {% set name = "jupyter-ui-poll" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5b5bb4609bca862ffaebfe17d4a626e64769985b63d5fd176f985a9a0d159a5e
+  sha256: 8c194c7222ab18646f9069ecdcd11579e4a62ec269fd4535b5702693f805e374
 
 build:
   number: 0
@@ -19,13 +19,9 @@ requirements:
     - pip
     - python >=3.6
     - ipython
-    - tornado
-    - pyzmq
   run:
     - python >=3.6
     - ipython
-    - tornado
-    - pyzmq
 
 test:
   imports:
