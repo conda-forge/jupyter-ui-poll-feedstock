@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 439fa936a37e09c0d3eaa9b835eeb0da2edaec3db06eade43a01d614a528424c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - ipython
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - ipython
 
 test:
@@ -28,6 +28,7 @@ test:
     - jupyter_ui_poll
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
