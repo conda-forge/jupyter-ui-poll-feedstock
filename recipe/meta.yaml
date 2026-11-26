@@ -1,13 +1,13 @@
 {% set name = "jupyter-ui-poll" %}
-{% set version = "1.1.0" %}
+{% set version = "1.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 9684c98db5b02054afa732b06143d865315a6f8653b62a315370856c87b60272
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 15fc190b32814de01ffbf3cbfcb9d0496e46cf42ad7e6ad611f54b8769eac67c
 
 build:
   number: 0
